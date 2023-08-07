@@ -25,7 +25,7 @@ requirements:
     - numpy
     - scipy
     - versioneer
-    - toml
+    - tomli          # [py<311]
   run:
     - python
     - {{ pin_compatible('numpy') }}
