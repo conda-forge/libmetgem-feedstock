@@ -1,5 +1,5 @@
 {% set name = "libmetgem" %}
-{% set version = "0.6.3" %}
+{% set version = "0.6.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/metgem/libmetgem/archive/v{{ version }}.tar.gz
-  sha256: 8b85f9e183bb5dcc0b5fba995ed7598af298c826f5436835e7fc16bcb1ae8893
+  sha256: 60c42e5ae5754cac7f23f948380e8ae376bb4ad59a0b8b426b42e22be55a3c54
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 2
+  number: 0
 
 requirements:
   build:
@@ -24,11 +24,14 @@ requirements:
     - cython
     - numpy
     - scipy
+    - versioneer
+    - tomli          # [py<311]
   run:
     - python
     - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('scipy') }}
     - _openmp_mutex  # [linux]
+    - llvm-openmp    # [osx]
 
 test:
   imports:
@@ -39,6 +42,13 @@ test:
     - libmetgem.msp
     - libmetgem.neighbors
     - libmetgem.network
+    - libmetgem._cosine
+    - libmetgem._database
+    - libmetgem._filter
+    - libmetgem._mgf
+    - libmetgem._msp
+    - libmetgem._neighbors
+    - libmetgem._network
 
 about:
   home: https://github.com/metgem/libmetgem
