@@ -1,5 +1,5 @@
 {% set name = "libmetgem" %}
-{% set version = "0.6.4" %}
+{% set version = "0.6.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,11 +7,11 @@ package:
 
 source:
   url: https://github.com/metgem/libmetgem/archive/v{{ version }}.tar.gz
-  sha256: 60c42e5ae5754cac7f23f948380e8ae376bb4ad59a0b8b426b42e22be55a3c54
+  sha256: bd8ac95e972f241aea484bd868b11171a3481c17e7ecc012a06c96b149b9ada5
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   build:
