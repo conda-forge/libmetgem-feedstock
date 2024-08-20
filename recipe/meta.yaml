@@ -36,14 +36,14 @@ requirements:
 
 test:
   imports:
-    - libmetgem.cosine
+    - libmetgem.score
     - libmetgem.database
     - libmetgem.filter
     - libmetgem.mgf
     - libmetgem.msp
     - libmetgem.neighbors
     - libmetgem.network
-    - libmetgem._cosine
+    - libmetgem._score
     - libmetgem._database
     - libmetgem._filter
     - libmetgem._mgf
