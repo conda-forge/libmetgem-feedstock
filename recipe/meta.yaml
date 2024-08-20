@@ -11,7 +11,7 @@ source:
 
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -29,7 +29,6 @@ requirements:
     - tomli          # [py<311]
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - {{ pin_compatible('scipy') }}
     - _openmp_mutex  # [linux]
     - llvm-openmp    # [osx]
